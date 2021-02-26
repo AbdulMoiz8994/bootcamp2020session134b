@@ -1,18 +1,20 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-// import Paper from '@material-ui/core/Paper';
 import { Box, Typography } from '@material-ui/core';
-import code from '../../Images/code.svg';
+import code from '../../Images/Intro_Brain.svg';
+
+import useWebAnimations from "@wellyshen/use-web-animations";
+
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         display: 'flex',
-        // backgroundColor: 'black'
 
     },
     heading: {
         fontSize: '5rem',
-        color: 'black'
+        color: 'black',
     },
     leftbox: {
         margin: '6rem',
@@ -24,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     btn: {
         fontSize: '2rem',
         borderRadius: '50px',
-        width: '15vw',
+        width: '40%',
         height: '50px',
         marginLeft: '20px',
         backgroundColor: '#5A20CB',
@@ -42,6 +44,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const Contant1 = () => {
+
+    const { keyframe, timing } = useWebAnimations({})
+
+
+
+
     const classes = useStyles();
     return (
         <div className={classes.root}>
