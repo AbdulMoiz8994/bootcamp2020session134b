@@ -1,7 +1,8 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography } from '@material-ui/core';
-import code from '../../Images/Intro_Brain.svg';
+import Brain from '../../Images/brain.svg';
+import Base from '../../Images/Base.svg'
 
 import useWebAnimations from "@wellyshen/use-web-animations";
 
@@ -15,13 +16,17 @@ const useStyles = makeStyles((theme) => ({
     heading: {
         fontSize: '5rem',
         color: 'black',
+        fontFamily: 'Comfortaa, cursive',
+
     },
     leftbox: {
-        margin: '6rem',
+        margin: '10rem',
         color: 'black',
     },
     p: {
-        fontSize: '2rem'
+        fontSize: '2rem',
+        fontFamily: 'Comfortaa, cursive',
+
     },
     btn: {
         fontSize: '2rem',
@@ -34,18 +39,41 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: '#5A20CB',
         borderRight: '#5A20CB',
         color: 'white',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        fontFamily: 'Comfortaa, cursive',
+
     },
     rightbox: {
-        marginTop: '5rem',
-        // marginRight: '20rem'
-        // backgroundColor: 'black'
+        marginTop: '4rem',
+        marginLeft: '5rem',
     },
+    base: {
+        marginTop: '-28rem',
+        width: '40vw',
+        marginLeft: '-8rem'
+
+
+    },
+    brain: {
+        marginLeft: '-3.6rem'
+    }
 }));
 
 export const Contant1 = () => {
+    const { ref } = useWebAnimations({
+        keyframes: [
+            { transform: 'translateY(0px)' },
+            { transform: 'translateY(80px)' },
 
-    const { keyframe, timing } = useWebAnimations({})
+        ],
+        timing: {
+            duration: 5000,
+            iterations: Infinity,
+            direction: 'alternate',
+            easing: 'ease-in-out',
+
+        }
+    })
 
 
 
@@ -53,16 +81,15 @@ export const Contant1 = () => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            {/* <Grid container spacing={3}> */}
             <Box component="div" className={classes.leftbox}>
                 <Typography Variant="h3" noWrap className={classes.heading}>Web Animation</Typography>
                 <p className={classes.p}>We are doing Bootcamp 2020.</p>
                 <button className={classes.btn}>Contact</button>
             </Box>
             <Box component="div" className={classes.rightbox}>
-                <img src={code} alt="Brain" />
+                <img src={Brain} alt="brain" ref={ref} height="400px" className={classes.brain} />
+                <img src={Base} alt="base" className={classes.base} />
             </Box>
-            {/* </Grid> */}
         </div>
     )
 }

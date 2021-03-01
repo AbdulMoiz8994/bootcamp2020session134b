@@ -119,7 +119,7 @@ export const Header = () => {
 
     ]
     const { ref } = useWebAnimations({ ...rubberBand })
-    const { keyframes, timing } = bounceInLeft;
+    const { keyframes } = bounceInLeft;
     const animationShake = useWebAnimations({
         keyframes,
         timing: {
@@ -139,7 +139,9 @@ export const Header = () => {
                 position="fixed"
                 className={clsx(classes.appBar, {
                     [classes.appBarShift]: open,
+
                 })}
+            // style={{ backgroundColor: '#5A20CB' }}
             >
                 <Toolbar>
                     <IconButton
@@ -151,7 +153,7 @@ export const Header = () => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h5" noWrap>
+                    <Typography variant="h5" noWrap >
                         BOOTCAMP 2020
                     </Typography>
                 </Toolbar>
@@ -189,6 +191,6 @@ export const Header = () => {
                     [classes.contentShift]: open,
                 })}
             ></main>
-        </div>
+        </div >
     )
 }
